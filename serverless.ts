@@ -1,5 +1,5 @@
+import saveHistoricoEmpleado from '@functions/saveHistoricoEmpleado';
 import type { AWS } from '@serverless/typescript';
-
 import getHistoricoEmpleado from 'src/infraestruture/handlers/functions/getHistoricoEmpleado';
 
 const serverlessConfiguration: AWS = {
@@ -32,7 +32,8 @@ const serverlessConfiguration: AWS = {
   },
   // import the function via paths
   functions: { 
-    getHistoricoEmpleado
+    getHistoricoEmpleado,
+    saveHistoricoEmpleado
   },
 };
 
