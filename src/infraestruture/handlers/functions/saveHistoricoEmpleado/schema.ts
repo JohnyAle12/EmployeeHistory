@@ -1,8 +1,8 @@
 export default {
     type: "object",
     properties: {
-        beforeAmount: { type: 'string' },
-        newAmount: { type: 'string' }
+        beforeAmount: { type: 'number' },
+        newAmount: { type: 'number' }
     },
     required: ['beforeAmount', 'newAmount']
   } as const;
