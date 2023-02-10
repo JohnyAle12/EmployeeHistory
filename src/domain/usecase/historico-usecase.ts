@@ -22,7 +22,7 @@ export default class HistoricoUseCase implements IHistoricoMethod {
     }
 
     public async saveHistoricoEmpleado(empleadoId: number, sueldos: IHistoricoSueldos) {
-        
+        await this.historyAdapter.saveHistoricoEmpleado(empleadoId, sueldos);
     }
 
 }
