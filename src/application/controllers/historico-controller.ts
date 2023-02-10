@@ -2,7 +2,6 @@ import { StatusCodes } from "http-status-codes";
 import HistoricoUseCase from "src/domain/usecase/historico-usecase";
 import { responseFail, responseSuccess } from "../helpers/response";
 import { IHistoricoApi, IResponseApi, IHistoricoMethod } from '../interfaces/response-controller-interface';
-import saveHistoricoEmpleado from '@functions/saveHistoricoEmpleado';
 import { IHistoricoSueldos } from "../interfaces/historico-interface";
 
 class HistoricoController implements IHistoricoApi {
