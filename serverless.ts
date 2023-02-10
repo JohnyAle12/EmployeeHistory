@@ -29,6 +29,31 @@ const serverlessConfiguration: AWS = {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
     },
     lambdaHashingVersion: '20201221',
+    iam: {
+      role: {
+        statements: [
+          {
+            Effect: 'Allow',
+            Action: [
+              'dynamodb:PutItem',
+              'dynamodb:GetItem'
+            ],
+            Resource: {
+              'Fn::Join': [
+                '',
+                [
+                  'arn:aws:dynamodb:',
+                  { Ref: 'AWS::Region' },
+                  ':',
+                  { Ref: 'AWS::AccountId' },
+                  ':table/employee-history'
+                ] 
+              ]
+            }
+          }
+        ]
+      }
+    }
   },
   // import the function via paths
   functions: { 

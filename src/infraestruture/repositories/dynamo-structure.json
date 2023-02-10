@@ -1,0 +1,22 @@
+{
+  "employeeId": {
+    "N": "1"
+  },
+  "history": {
+     "L": [
+         {
+             "M": {
+                 "fechaActualizacion": {
+                     "S": "2023-02-10 10:00:00"
+                 },
+                 "sueldoAnterior": {
+                     "N": "23000"
+                 },
+                 "sueldoNuevo": {
+                     "N": "43000"
+                 }
+             }
+         }
+      ]
+  }
+}
