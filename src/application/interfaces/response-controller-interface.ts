@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { IHistorico } from "./historico-interface";
+import { IHistorico, IHistoricoSueldos } from "./historico-interface";
 
 export interface IResponseApi {
     statusCode: StatusCodes;
@@ -15,8 +15,10 @@ export interface IResponseBody {
 
 export interface IHistoricoMethod {
     getHistoricoEmpleado: (empleadoId: number) => Promise<IHistorico[]>;
+    saveHistoricoEmpleado: (empleadoId: number, sueldos: IHistoricoSueldos) => Promise<void>;
 }
 
 export interface IHistoricoApi {
     getHistoricoEmpleado: (empleadoId: number) => Promise<IResponseApi>
+    saveHistoricoEmpleado: (empleadoId: number, sueldos: IHistoricoSueldos) => Promise<IResponseApi>;
 }

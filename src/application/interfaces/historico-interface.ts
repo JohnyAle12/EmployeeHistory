@@ -3,3 +3,8 @@ export interface IHistorico {
     sueldoAnterior: number;
     sueldoNuevo: number;
 }
+
+export interface IHistoricoSueldos {
+    sueldoAnterior: number;
+    sueldoNuevo: number;
+}

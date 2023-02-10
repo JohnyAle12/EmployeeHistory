@@ -2,6 +2,8 @@ import { StatusCodes } from "http-status-codes";
 import HistoricoUseCase from "src/domain/usecase/historico-usecase";
 import { responseFail, responseSuccess } from "../helpers/response";
 import { IHistoricoApi, IResponseApi, IHistoricoMethod } from '../interfaces/response-controller-interface';
+import saveHistoricoEmpleado from '@functions/saveHistoricoEmpleado';
+import { IHistoricoSueldos } from "../interfaces/historico-interface";
 
 class HistoricoController implements IHistoricoApi {
 
@@ -23,6 +25,18 @@ class HistoricoController implements IHistoricoApi {
 
         return response;
     
+    }
+
+    saveHistoricoEmpleado =async (empleadoId:number, sueldo: IHistoricoSueldos) => {
+        let response: IResponseApi;
+
+        try {
+            await this.historyUseCase.saveHistoricoEmpleado(empleadoId, sueldo);
+            response = responseSuccess({ message: "historico guardado" }, StatusCodes.CREATED);
+        } catch (error) {
+            response = responseFail(error)
+        }
+        return response;
     }
 
 }
