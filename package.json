@@ -6,8 +6,8 @@
   "scripts": {
     "deploy:dev": "sls deploy --stage dev --region us-east-1",
     "deploy:stg": "sls deploy --stage stg --region us-east-1",
-    "offline": "sls offline --stage dev --region us-east-1 --host 0.0.0.0",
-    "debug": "export SLS_DEBUG=* && node --inspect /usr/bin/sls offline --stage dev --region us-east-1 --host 0.0.0.0"
+    "offline": "sls offline --stage dev --region us-east-1 --host localhost",
+    "debug": "export SLS_DEBUG=* && node --inspect /usr/bin/sls offline --stage dev --region us-east-1 --host localhost"
   },
   "engines": {
     "node": ">=14.15.0"

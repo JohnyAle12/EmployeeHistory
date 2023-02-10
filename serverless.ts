@@ -1,6 +1,6 @@
 import type { AWS } from '@serverless/typescript';
 
-import hello from '@functions/hello';
+import getHistoricoEmpleado from 'src/infraestruture/handlers/functions/getHistoricoEmpleado';
 
 const serverlessConfiguration: AWS = {
   service: 'historico-empleados-api',
@@ -18,7 +18,7 @@ const serverlessConfiguration: AWS = {
   provider: {
     name: 'aws',
     runtime: 'nodejs14.x',
-    profile: 'lbriceno-personal',
+    profile: 'jprieto',
     stage: '${opt:stage}',
     region: 'us-east-1',
     apiGateway: {
@@ -32,7 +32,7 @@ const serverlessConfiguration: AWS = {
   },
   // import the function via paths
   functions: { 
-    hello
+    getHistoricoEmpleado
   },
 };
 
